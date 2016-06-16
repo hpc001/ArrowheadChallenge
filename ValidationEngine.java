@@ -5,28 +5,19 @@ public class ValidationEngine implements IValidationEngine{
 
 	}
 	
-
-
-
-
-
-
 	public static void main(String[] args)
 	{
 		IValidationEngine validator;
 		validator = new ValidationEngine();
 
-		final String [] validationTags = new String[]{"notEmpty", "factor", "notNegative", "withinModLimits"};
-		final String value = "-2.0";
+		final String [] validationTags = new String[]{"notEmpty", "allAlpha", "firstLetterUpperOnly"};
+		final String value = "jAson";
 		final IValidationResult validationResult = validator.validate(value, validationTags);
 		
-		final boolean expected = true;
-		System.out.println("VALUE: " + value);
-
-		final boolean actual = validationResult.passes();
+		final String expected = "Value's first letter is not uppercase";
+		final String actual = validationResult.getMessage();
 		System.out.println("ACTUAL: " + actual);
 		assert (expected == actual);
 		//assert stampDispenser.calcMinNumStampsToFillRequest(120) == 2;
-
 	}
 }
