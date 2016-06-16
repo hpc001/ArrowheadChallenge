@@ -3,7 +3,7 @@
  * @contact hectorchen6@gmail.com
  */
 
-public class Ivalres implements IValidationResult{
+public class ValResult implements IValidationResult{
 	
 	String val;
 	String[] valTags;
@@ -15,7 +15,7 @@ public class Ivalres implements IValidationResult{
      * @param valTags 	A string array that contains the specific rules
      *					the given value will be checked on
      */	
-    public Ivalres(String val, String[] valTags){
+    public ValResult(String val, String[] valTags){
     	//Sets instance variables to be used later
 		this.val = val;
 		this.valTags = valTags;
