@@ -1,3 +1,8 @@
+/*
+ * @author Hector Chen
+ * @contact hectorchen6@gmail.com
+ */
+
 public class Ivalres implements IValidationResult{
 	
 	String val;
@@ -11,6 +16,7 @@ public class Ivalres implements IValidationResult{
      *					the given value will be checked on
      */	
     public Ivalres(String val, String[] valTags){
+    	//Sets instance variables to be used later
 		this.val = val;
 		this.valTags = valTags;
 	} 
@@ -127,7 +133,7 @@ public class Ivalres implements IValidationResult{
      */
 	public boolean notEmptyCheck(String val){
 		//System.out.println("~~~ notEmptyCheck ~~~");
-		if(val.equals("")) 
+		if(val.isEmpty() || val == null) 
 			return false;
 		else 
 			return true;
