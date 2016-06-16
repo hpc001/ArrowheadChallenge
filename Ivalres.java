@@ -65,34 +65,40 @@ public class Ivalres implements IValidationResult{
 	}
 
 	public boolean notEmptyCheck(String val){
-		System.out.println("~~~NOT EMPTY CHECK~~~");
+		System.out.println("~~~ notEmptyCheck ~~~");
 		if(val.equals("")) return false;
 		else return true;
 	}
 
 	public boolean notNegativeCheck(String val){
-		System.out.println("---NOT NEGATIVE CHECK---");
+		System.out.println("--- notNegative ---");
 		if(val.charAt(0) == '-') return false;
 		else return true;
 	}
 
 	public boolean factorCheck(String val){
-		System.out.println("===Factor Check===");
-		return val.matches("\\d*\\.?\\d+");  
+		System.out.println("=== factorCheck ===");
+		return val.matches("[+-]?\\d*\\.?\\d+");  
 
 	}
 
 	public boolean withinModLimitsCheck(String val){
-		System.out.println("NOT NEGATIVE CHECK");
-		return true;
+		System.out.println("<<< withinModLimitsCheck >>>");
+		float result = Float.parseFloat(val);
+		if(1.0<=result && result<=3.5) return true;
+		return false;
 	}		
 
 	public boolean allAlphaCheck(String val){
-		return true;
+		System.out.println("@@@ allAlphaCheck @@@");
+
+		return val.matches("[a-zA-Z]+");
 	}
 
 	public boolean firstLetterUpperOnlyCheck(String val){
-		return true;
+		System.out.println("@@@ firstLetterUpperOnlyCheck @@@");
+
+		return val.matches("^[A-Z][a-zA-Z]*");
 	}
 
 
